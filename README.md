@@ -1,0 +1,2 @@
+# PhiLog
+Simple C++ logger
