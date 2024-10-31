@@ -21,10 +21,7 @@
 
 namespace phi
 {
-    /**
-     * @brief Logger Singleton Class
-     * 
-     */
+    /** @brief Logger Singleton Class */
     class PhiLog
     {
     private:

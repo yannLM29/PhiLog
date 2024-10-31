@@ -1,3 +1,13 @@
+/**
+ * @file StdOutput.cpp
+ * @author Yann Le Masson
+ * @version 0.1
+ * @date 2024-10-31
+ * 
+ * @copyright Copyright (c) 2024
+ * 
+ */
+
 #pragma once
 
 #include "IOutput.hpp"
@@ -8,6 +18,7 @@
 
 namespace phi
 {
+    /** @brief Output implementation in cpp standard output */
     class StdOutput : public IOutput
     {
     private:
