@@ -31,3 +31,8 @@ target_include_directories(${PROJECT_NAME} PUBLIC
 )
 
 set_target_properties(${PROJECT_NAME} PROPERTIES LINKER_LANGUAGE CXX)
+
+################ MACROS ################
+target_compile_definitions(${PROJECT_NAME} PUBLIC
+    PHILOG_VERSION="${PROJECT_VERSION}"
+)

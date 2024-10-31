@@ -42,6 +42,7 @@ namespace phi
 
         }
 
+        // ---------------- GET ----------------
         /**
          * @brief Get singleton of the phi logger
          * 
@@ -52,6 +53,18 @@ namespace phi
             return me;
         }
 
+        inline static std::string GetLibVersion() {
+            return PHILOG_VERSION;
+        }
+
+        // ---------------- SET ----------------
+        inline void AddOutput(std::unique_ptr<IOutput> inNewOutput) {
+            std::lock_guard lock(mMutex);
+            
+            mOutputs.emplace_back(std::move(inNewOutput));
+        }
+        
+        // ---------------- LOG METHODS ----------------
         /** @brief Log at debug level */
         inline void Debug(const std::string &inText) const {
             Log(inText, eLogLevel::debug);
@@ -72,11 +85,6 @@ namespace phi
             Log(inText, eLogLevel::error);
         }
 
-        inline void AddOutput(std::unique_ptr<IOutput> inNewOutput) {
-            std::lock_guard lock(mMutex);
-            
-            mOutputs.emplace_back(std::move(inNewOutput));
-        }
     };
 } // namespace phi
 
