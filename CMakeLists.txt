@@ -14,6 +14,7 @@ set(SRC_FILES
     ${PROJECT_SOURCE_DIR}/PhiLog.cpp
     ${PROJECT_SOURCE_DIR}/LogLevel.hpp
     ${PROJECT_SOURCE_DIR}/IOutput.hpp
+    ${PROJECT_SOURCE_DIR}/Utilities.hpp
 )
 
 set(SRC_OUTPUTS_FILES
