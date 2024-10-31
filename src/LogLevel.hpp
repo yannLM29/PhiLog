@@ -19,7 +19,7 @@ namespace phi
      * @brief Levels of logs from the weaker to the stronger
      * 
      */
-    enum eLogLevel: unsigned int {
+    enum eLogLevel {
         debug = 0,
         info,
         warn,
