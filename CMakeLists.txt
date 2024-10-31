@@ -16,9 +16,14 @@ set(SRC_FILES
     ${PROJECT_SOURCE_DIR}/IOutput.hpp
 )
 
+set(SRC_OUTPUTS_FILES
+    ${PROJECT_SOURCE_DIR}/Outputs/StdOutput.hpp
+)
+
 ################ TARGET ################
 add_library(${PROJECT_NAME} STATIC
     ${SRC_FILES}
+    ${SRC_OUTPUTS_FILES}
 )
 
 target_include_directories(${PROJECT_NAME} PUBLIC
