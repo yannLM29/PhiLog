@@ -24,7 +24,7 @@ namespace phi
         eLogLevel mMinimumLevel;
         std::string mFileName;
     public:
-        DiscreteFileOutput(eLogLevel inMinimumLevel = debug, const std::string &inProgName = "PhiLog", const std::string &inPath = "./Logs") 
+        DiscreteFileOutput(eLogLevel inMinimumLevel = debug, const std::string &inProgName = "PhiLog", const std::string &inPath = "./Logs/") 
         : mMinimumLevel(inMinimumLevel), 
           mFileName(inPath + inProgName + ".log") {
             
