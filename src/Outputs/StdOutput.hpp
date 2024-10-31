@@ -11,6 +11,7 @@
 #pragma once
 
 #include "IOutput.hpp"
+
 #include <iostream>
 #include <string>
 #include <sstream>
@@ -34,8 +35,7 @@ namespace phi
         }
 
         void Log(const std::string &inText, eLogLevel inLevel, const std::time_t &inDate) const override;
-
-        void SetMinimumLevel(eLogLevel inLevel) override{
+        void SetMinimumLevel(eLogLevel inLevel) override {
             mMinimumLevel = inLevel;
         }
     };

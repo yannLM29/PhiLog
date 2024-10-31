@@ -14,11 +14,13 @@ set(SRC_FILES
     ${PROJECT_SOURCE_DIR}/PhiLog.cpp
     ${PROJECT_SOURCE_DIR}/LogLevel.hpp
     ${PROJECT_SOURCE_DIR}/IOutput.hpp
+    ${PROJECT_SOURCE_DIR}/Utilities.hpp
 )
 
 set(SRC_OUTPUTS_FILES
     ${PROJECT_SOURCE_DIR}/Outputs/StdOutput.hpp
     ${PROJECT_SOURCE_DIR}/Outputs/StdOutput.cpp
+    ${PROJECT_SOURCE_DIR}/Outputs/DiscreteFileOutput.hpp
 )
 
 ################ TARGET ################
