@@ -1,5 +1,6 @@
-doc/
 build/
 *.log
 .vscode/
 test/
+*.dia
+*.dia.autosave

@@ -73,6 +73,8 @@ namespace phi
         }
 
         inline void AddOutput(std::unique_ptr<IOutput> inNewOutput) {
+            std::lock_guard lock(mMutex);
+            
             mOutputs.emplace_back(std::move(inNewOutput));
         }
     };
