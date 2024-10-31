@@ -10,6 +10,7 @@
 #pragma once
 
 #include "IOutput.hpp"
+#include "Utilities.hpp"
 
 #include <fstream>
 #include <string>
@@ -29,14 +30,18 @@ namespace phi
             
         }
 
-        ~DiscreteFileOutput();
-
         void Log(const std::string &inText, eLogLevel inLevel, const std::time_t &inDate) const override {
-            std::ofstream fichier("nom_fichier");
+            if(inLevel >= mMinimumLevel) {
+                std::ofstream log_file(mFileName, std::ios::app);
+                if (log_file.is_open()) {
+                    log_file <<  "[" << sLogLevelNames[inLevel] << "]" << " " << getTimeString(inDate) << " - " << inText << std::endl;
+                    log_file.close();
+                }
+            }
         }
 
         void SetMinimumLevel(eLogLevel inLevel) {
-
+            mMinimumLevel = inLevel;
         }
     };
     
