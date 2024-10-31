@@ -5,12 +5,17 @@
 #include <string>
 #include <ctime>
 
-class IOutput
+namespace phi
 {
-public:
-    virtual ~IOutput() = default;
+    class IOutput
+    {
+    public:
+        virtual ~IOutput() = default;
 
-    virtual void Log(const std::string &inText, eLogLevel inLevel, const std::time_t &inDate);
-    virtual void SetMinimumLevel(eLogLevel inLevel);
-};
+        virtual void Log(const std::string &inText, eLogLevel inLevel, const std::time_t &inDate);
+        virtual void SetMinimumLevel(eLogLevel inLevel);
+    };
+
+} // namespace phi
+
 
