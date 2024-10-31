@@ -18,6 +18,7 @@ set(SRC_FILES
 
 set(SRC_OUTPUTS_FILES
     ${PROJECT_SOURCE_DIR}/Outputs/StdOutput.hpp
+    ${PROJECT_SOURCE_DIR}/Outputs/StdOutput.cpp
 )
 
 ################ TARGET ################
