@@ -11,6 +11,14 @@
 
 #pragma once
 
+#include "LogLevel.hpp"
+#include "IOutput.hpp"
+
+#include <string>
+#include <mutex>
+#include <vector>
+#include <memory>
+
 namespace phi
 {
     /**
@@ -20,9 +28,14 @@ namespace phi
     class PhiLog
     {
     private:
-        PhiLog(/* args */) {
+        // Attributes
+        mutable std::mutex mMutex;
+        std::vector<std::unique_ptr<IOutput>> mOutputs;
 
+        // Methods
+        PhiLog() {
         }
+        void Log(const std::string &inText, eLogLevel inLevel) const;
 
     public:
         ~PhiLog() {
@@ -39,6 +52,29 @@ namespace phi
             return me;
         }
 
+        /** @brief Log at debug level */
+        inline void Debug(const std::string &inText) const {
+            Log(inText, eLogLevel::debug);
+        }
+
+        /** @brief Log at info level */
+        inline void Info(const std::string &inText) const {
+            Log(inText, eLogLevel::info);
+        }
+
+        /** @brief Log at warning level */
+        inline void Warn(const std::string &inText) const {
+            Log(inText, eLogLevel::warn);
+        }
+
+        /** @brief Log at error level */
+        inline void Error(const std::string &inText) const {
+            Log(inText, eLogLevel::error);
+        }
+
+        inline void AddOutput(std::unique_ptr<IOutput> inNewOutput) {
+            mOutputs.emplace_back(std::move(inNewOutput));
+        }
     };
 } // namespace phi
 
