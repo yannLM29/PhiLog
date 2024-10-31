@@ -11,6 +11,9 @@ set(PROJECT_SOURCE_DIR ${PROJECT_DIR}/src)
 ################ SOURCE FILES ################
 set(SRC_FILES
     ${PROJECT_SOURCE_DIR}/PhiLog.hpp
+    ${PROJECT_SOURCE_DIR}/PhiLog.cpp
+    ${PROJECT_SOURCE_DIR}/LogLevel.hpp
+    ${PROJECT_SOURCE_DIR}/IOutput.hpp
 )
 
 ################ TARGET ################
