@@ -11,6 +11,8 @@
 #pragma once
 
 #include "IOutput.hpp"
+#include "Utilities.hpp"
+
 #include <iostream>
 #include <string>
 #include <sstream>
